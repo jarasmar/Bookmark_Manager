@@ -1,12 +1,18 @@
 # frozen_string_literal: true
 
 require 'sinatra/base'
+require './lib/bookmark'
 
-class Bookmark_Manager < Sinatra::Base
-
+# Top level class
+class BookmarkManager < Sinatra::Base
   get '/' do
     'Bookmark Manager'
   end
 
-  run! if app_file == $0
+  get '/bookmarks' do
+    @bookmarks = Bookmark.all
+    erb :bookmarks
+  end
+
+  run! if app_file == $PROGRAM_NAME
 end
