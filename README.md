@@ -17,6 +17,11 @@ get './library'  -->  displays library.erb (list of bookmarks)
 
 - Add new bookmarks
 ```
+As a time-pressed user
+So that I can save a website
+I would like to add the site's address and title to bookmark manager
+```
+```
 | LIBRARY        | BOOKMARK         |
 | :------------- |:-----------------|
 | -------------- |------------------|
@@ -25,8 +30,6 @@ get './library'  -->  displays library.erb (list of bookmarks)
 | #list          | #add             |
 | #add()         |                  |
 
-I can create a new bookmark
-I can see the list of bookmarks from the library
 ```
 
 - Delete bookmarks
