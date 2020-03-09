@@ -2,8 +2,8 @@
 **The website will have the following specification:**
 - Show a list of bookmarks
 ```
-As an user
-
+I can create a new bookmark
+I can see a bookmark
 ```
 
 - Add new bookmarks
