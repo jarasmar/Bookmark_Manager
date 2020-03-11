@@ -8,7 +8,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    p ENV
+    # p ENV
     @bookmarks = Bookmark.all
     erb :bookmarks
   end
@@ -18,8 +18,9 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/bookmarks' do
+    title = params['title']
     url = params['url']
-    Bookmark.create(url)
+    Bookmark.create(title: title, url: url)
     redirect '/bookmarks'
   end
 
