@@ -43,3 +43,4 @@ I would like to add the site's address and title to bookmark manager
 - Tag bookmarks into categories
 - Filter bookmarks by tag
 - Users are restricted to manage only their own bookmarks -->
+- 
