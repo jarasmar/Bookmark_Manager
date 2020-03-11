@@ -1,5 +1,7 @@
 ENV['RACK_ENV'] = 'test'
 ENV['ENVIRONMENT'] = 'test'
+# require method to clear up test database
+require_relative './setup_test_database'
 
 # require our Sinatra app file
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
@@ -9,6 +11,14 @@ require 'capybara/rspec'
 require 'rspec'
 
 Capybara.app = BookmarkManager
+
+# clears the test database before each test
+
+RSpec.configure do |config|
+  config.before(:each) do
+    setup_test_database
+  end
+end
 
 RSpec.configure do |config|
   config.after(:suite) do
