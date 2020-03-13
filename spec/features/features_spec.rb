@@ -36,3 +36,16 @@ feature 'Adding bookmarks' do
     expect(page).to have_link('Test Book Mark', href: 'https://testbookmark.com')
   end
 end
+
+feature 'Deleting bookmarks' do
+  scenario 'an user can delete a bookmark' do
+    Bookmark.create(title: 'Test Book Mark', url: 'https://testbookmark.com')
+    visit('/bookmarks')
+    expect(page).to have_link('Test Book Mark', href: 'https://testbookmark.com')
+
+    first('.bookmark').click_button 'Delete'
+
+    expect(current_path).to eq '/bookmarks'
+    expect(page).not_to have_link('Test Book Mark', href: 'https://testbookmark.com')
+  end
+end
